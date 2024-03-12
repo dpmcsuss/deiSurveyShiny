@@ -603,7 +603,7 @@ server <- function(input, output, session) {
       var <- input$variable
 
       if (input$qtype == "Course Satisfaction" & input$dep == "Course") {
-        cdf = course_ldf
+        cdf = course_ldf #cdf = current dataframe
         graphTitle = paste("Survey Prompt: How satisfied are you in regards to the instructional support\n
                            (ex. support from professors) you've received in", input$question, "?")
       
@@ -615,27 +615,26 @@ server <- function(input, output, session) {
                            your own personal experience: ",
                            "1 = ", adj1, "and ", "5 = ", substring(input$question, nchar(adj1)+2, nchar(input$question)))
       
-      } else if (input$qtype == "Agreement"){
+      }else if (input$qtype == "Agreement"){
         cdf = agreement_ldf
         graphTitle = paste("Survey Prompt: Please indicate your level of agreement with the following statement:\n", input$question)
       
-      } else if (input$qtype == "Miscellaneous"){
+      }else if (input$qtype == "Miscellaneous"){
         cdf = misc_ldf
         if (str_detect(input$question, "AFTER")) {
           graphTitle = paste("Survey Prompt: AFTER you completed your first few STEM courses at BU, do 
                              you feel like\nyour high school adequately prepared you for college? Or in 
                              other words, once you\nexperienced the difficulty level of college courses, 
                              did you feel like your high school\nprepared you?")
-        
-        } else if (str_detect(input$question, "PRIOR")){
+        }else if (str_detect(input$question, "PRIOR")){
           graphTitle = paste("Survey Prompt: Did you feel prepared for college level courses within your 
                              major PRIOR to\nentering BU? Or in other words, when you graduated from high 
                              school, did you feel ready for\ncollege level courses?")
-        } else {
+        }else{
         graphTitle = paste("Survey Prompt: ", input$question)
         }
       
-      } else if (input$qtype == "Discrimination"){
+      }else if (input$qtype == "Discrimination"){
         cdf = dis_ldf
         if (str_detect(input$question, "experienced")){
           graphTitle = paste("Survey Prompt:", "Have you ever experienced discrimination or disrespectful/inappropriate\n
@@ -645,7 +644,7 @@ server <- function(input, output, session) {
                              behavior in your major department?")
         }
 
-      } else if (input$qtype == "Course Satisfaction" & input$dep == "Department"){
+      }else if (input$qtype == "Course Satisfaction" & input$dep == "Department"){
         cdf = course_ldf
         graphTitle = paste("This data represents the overall course satisfaction for all",input$question, "courses.")
       }
@@ -679,7 +678,7 @@ server <- function(input, output, session) {
             stack_freq_prop(title = graphTitle)
         }
 
-      } else {
+      }else{
         select_df <-
           cdf %>%
           filter(str_detect(question_text, str_escape(input$question)))
