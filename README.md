@@ -50,7 +50,25 @@ install.packages(scales)
 
 ## Blockers
 
+### Data Cleaning
 
+- string data with the multi-select options are hard to deal with when creating visuals
+- Unsure if excluding survey results that were unfinished impact accuracy of the results of our data analysis
+
+### solution:
+- fixed with identifying each individual string value with commas and then splitting on this delimiter thought about simply not including those unfinished surveysquestioned needs of stakeholders decided to use NaN in place of unfinished results within surveys; to preserve integrity of survey/ unsure of needs of stakeholder
+
+
+## Software
+
+### understanding the web application development process
+- figuring out how to clean data to be applied to filters in shiny application as a result of gaps in the provided survey data 
+- ran into version control issues
+
+
+#solution:
+merged the changes manually to resolve this.
+merged the data from both 2022 and 2024, applied filters, and adjusted the graphs to accurately depict comparison
 
 ## Code of Conduct
 Please note that the DEI in Tech Climate Survey Project is released with a
