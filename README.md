@@ -58,7 +58,6 @@ install.packages(scales)
 ### Solution
 - fixed with identifying each individual string value with commas and then splitting on this delimiter thought about simply not including those unfinished surveysquestioned needs of stakeholders decided to use NaN in place of unfinished results within surveys; to preserve integrity of survey/ unsure of needs of stakeholder
 
-
 ## Software
 
 ### understanding the web application development process
@@ -66,8 +65,8 @@ install.packages(scales)
 - ran into version control issues
 
 ### Solution
-merged the changes manually to resolve this.
-merged the data from both 2022 and 2024, applied filters, and adjusted the graphs to accurately depict comparison
+- merged the changes manually to resolve this.
+- merged the data from both 2022 and 2024, applied filters, and adjusted the graphs to accurately depict comparison
 
 ## Code of Conduct
 Please note that the DEI in Tech Climate Survey Project is released with a
